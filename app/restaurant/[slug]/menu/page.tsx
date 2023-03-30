@@ -1,16 +1,12 @@
-import Header from "../components/Header";
 import RestaurantNavBar from "../components/RestaurantNavBar";
 import Menu from "../components/Menu";
 
 export default function RestaurantMenu() {
   return (
     <>
-      <Header />
-      <div className="flex m-auto w-2/3 justify-between items-start -mt-11">
-        <div className="bg-white w-[100%] rounded p-3 shadow mb-3">
-          <RestaurantNavBar />
-          <Menu />
-        </div>
+      <div className="bg-white w-[100%] rounded p-3 shadow mb-3">
+        <RestaurantNavBar />
+        <Menu />
       </div>
     </>
   );
