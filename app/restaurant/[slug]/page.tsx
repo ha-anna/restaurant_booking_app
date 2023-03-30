@@ -1,22 +1,15 @@
+"use client"
 import Link from 'next/link'
 import NavBar from '../../components/NavBar'
+import Header from '../../components/Header'
 
 export default function RestaurantDetails() {
   return (
-    <main className="max-w-screen-2xl m-auto bg-white">
+    <main className="max-w-screen-2xl m-auto bg-white mb-3">
       <NavBar />
-      {/* NAVBAR */} {/* HEADER */}
-      <div className="h-96 overflow-hidden">
-        <div
-          className="bg-center bg-gradient-to-r from-[#0f1f47] to-[#5f6984] h-full flex justify-center items-center"
-        >
-          <h1 className="text-7xl text-white captitalize text-shadow text-center">
-            Milestones Grill (Toronto)
-          </h1>
-        </div>
-      </div>
-      {/* HEADER */} {/* DESCRIPTION PORTION */}
-      <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
+      <Header /> 
+      {/* DESCRIPTION PORTION */}
+      <div className="flex m-auto w-2/3 justify-between items-start -mt-11">
         <div className="bg-white w-[70%] rounded p-3 shadow">
           {/* RESAURANT NAVBAR */}
           <nav className="flex text-reg border-b pb-2">
@@ -49,35 +42,45 @@ export default function RestaurantDetails() {
           </div>
           {/* DESCRIPTION */} {/* IMAGES */}
           <div>
-            <h1 className="font-bold text-3xl mt-10 mb-7 border-b pb-5">
-              5 photos
+            <h1 className="font-bold text-3xl mt-10 mb-3 border-b pb-5">
+              Photos
             </h1>
-            <div className="flex flex-wrap">
-              <img
-                className="w-56 h-44 mr-1 mb-1"
-                src="https://resizer.otstatic.com/v2/photos/xlarge/3/41701449.jpg"
-                alt=""
-              />
-              <img
-                className="w-56 h-44 mr-1 mb-1"
-                src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701450.jpg"
-                alt=""
-              />
-              <img
-                className="w-56 h-44 mr-1 mb-1"
-                src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701452.jpg"
-                alt=""
-              />
-              <img
-                className="w-56 h-44 mr-1 mb-1"
-                src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701453.jpg"
-                alt=""
-              />
-              <img
-                className="w-56 h-44 mr-1 mb-1"
-                src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701454.jpg"
-                alt=""
-              />
+            <div className="flex flex-wrap box-border">
+              <div className='basis-1/2'>
+                <img
+                  className="w-full h-48 object-cover p-1"
+                  src="https://resizer.otstatic.com/v2/photos/xlarge/3/41701449.jpg"
+                  alt=""
+                />
+              </div>
+              <div className='basis-1/2'>
+                <img
+                  className="w-full h-48 object-cover p-1"
+                  src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701450.jpg"
+                  alt=""
+                />
+              </div>
+              <div className='basis-1/2'>
+                <img
+                  className="w-full h-48 object-cover p-1"
+                  src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701452.jpg"
+                  alt=""
+                />
+              </div>
+              <div className='basis-1/2'>
+                <img
+                  className="w-full h-48 object-cover p-1"
+                  src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701453.jpg"
+                  alt=""
+                />
+              </div>
+              <div className='basis-1/2'>
+                <img
+                  className="w-full h-48 object-cover p-1"
+                  src="https://resizer.otstatic.com/v2/photos/xlarge/2/41701454.jpg"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
           {/* IMAGES */} {/* REVIEWS */}
@@ -117,25 +120,25 @@ export default function RestaurantDetails() {
           {/* REVIEWS */}
         </div>
         <div className="w-[27%] relative text-reg">
-          <div className="fixed w-[15%] bg-white rounded p-3 shadow">
+          <div className="fixed w-[20%] bg-white rounded p-3 shadow">
             <div className="text-center border-b pb-2 font-bold">
               <h4 className="mr-7 text-lg">Make a Reservation</h4>
             </div>
             <div className="my-3 flex flex-col">
               <label htmlFor="">Party size</label>
-              <select name="" className="py-3 border-b font-light" id="">
+              <select name="" className="p-3 border-b font-light" id="">
                 <option value="">1 person</option>
                 <option value="">2 people</option>
               </select>
             </div>
-            <div className="flex justify-between">
-              <div className="flex flex-col w-[48%]">
+            <div className="flex justify-between items-center">
+              <div className="flex flex-col w-[48%] justify-items-stretch">
                 <label htmlFor="">Date</label>
-                <input type="text" className="py-3 border-b font-light w-28" />
+                <input type="text" className="py-2 border font-light w-28" />
               </div>
-              <div className="flex flex-col w-[48%]">
+              <div className="flex flex-col w-[48%] justify-items-stretch">
                 <label htmlFor="">Time</label>
-                <select name="" id="" className="py-3 border-b font-light">
+                <select name="" id="" className="p-3 border-0 font-light">
                   <option value="">7:30 AM</option>
                   <option value="">9:30 AM</option>
                 </select>

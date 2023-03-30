@@ -4,7 +4,7 @@ import NavBar from '../../../components/NavBar'
 export default function RestaurantMenu() {
   return (
     <main className="max-w-screen-2xl m-auto bg-white">
-      <NavBar /> 
+      <NavBar />
       {/* HEADER */}
       <div className="h-96 overflow-hidden">
         <div
@@ -16,8 +16,8 @@ export default function RestaurantMenu() {
         </div>
       </div>
       {/* HEADER */} {/* DESCRIPTION PORTION */}
-      <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
-        <div className="bg-white w-[100%] rounded p-3 shadow">
+      <div className="flex m-auto w-2/3 justify-between items-start -mt-11">
+        <div className="bg-white w-[100%] rounded p-3 shadow mb-3">
           {/* RESAURANT NAVBAR */}
           <nav className="flex text-reg border-b pb-2">
             <Link href="/restaurant/milestones-grill" className="mr-7">Overview</Link>

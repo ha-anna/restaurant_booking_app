@@ -7,7 +7,7 @@ import Header from './components/Header'
 export default function Home() {
 
   return (
-      <main className="max-w-screen-2xl m-auto bg-white">
+    <main className="max-w-screen-2xl m-auto bg-white">
         <NavBar />
         <Header />
        {/* CARDS */}
@@ -40,7 +40,6 @@ export default function Home() {
             {/* CARD */}
           </div>
           {/* CARDS */}
-        </div>
       </main>
   )
 }
