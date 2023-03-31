@@ -25,7 +25,7 @@ A restaurant booking system app.
 - Next.js 13
 - TailwindCSS
 - Node.js
-- PostgreSQL
+- PostgreSQL (Supabase + Prisma)
 - JWT
 
 ### What I learned
