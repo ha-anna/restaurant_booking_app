@@ -9,7 +9,9 @@ const fetchRestaurants = async () => {
   return restaurants;
 };
 
-export default function Home() {
+export default async function Home() {
+  const restaurants = await fetchRestaurants();
+
   return (
     <>
       <Header />
