@@ -1,14 +1,31 @@
-"use client";
-import React from "react";
-import RestaurantNavBar from "./components/RestaurantNavBar";
-import Title from "./components/Title";
-import Rating from "./components/Rating";
-import Description from "./components/Description";
-import Images from "./components/Images";
-import Reviews from "./components/Reviews";
-import Reservation from "./components/Reservation";
+import React from 'react';
+import RestaurantNavBar from './components/RestaurantNavBar';
+import Title from './components/Title';
+import Rating from './components/Rating';
+import Description from './components/Description';
+import Images from './components/Images';
+import Reviews from './components/Reviews';
+import Reservation from './components/Reservation';
+import { PrismaClient } from '@prisma/client';
 
-export default function RestaurantDetails() {
+const prisma = new PrismaClient();
+
+const fetchRestaurantBySlug = async (slug: string) => {
+  const restaurant = await prisma.restaurant.findUnique({
+    where: {
+      slug,
+    },
+  });
+  return restaurant;
+};
+
+export default async function RestaurantDetails({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const restaurant = await fetchRestaurantBySlug(params.slug);
+
   return (
     <>
       <div className="bg-white w-[70%] rounded p-3 shadow">
