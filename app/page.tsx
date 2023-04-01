@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./components/Header";
 import RestaurantCard from "./components/RestaurantCard";
 import { PrismaClient } from "@prisma/client";
@@ -16,7 +17,9 @@ export default async function Home() {
     <>
       <Header />
       <div className="py-3 px-36 mt-10 flex flex-wrap justify-center">
-        <RestaurantCard />
+        {restaurants.map((restaurant) => (
+          <RestaurantCard />
+        ))}
       </div>
     </>
   );

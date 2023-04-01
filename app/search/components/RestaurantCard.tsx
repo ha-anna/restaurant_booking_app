@@ -1,6 +1,11 @@
+import React from "react";
 import Link from "next/link";
 
-export default function RestaurantCard() {
+interface Props {
+  hello: string;
+}
+
+export default function RestaurantCard({}: Props) {
   return (
     <div className="border-b flex pb-5">
       <img

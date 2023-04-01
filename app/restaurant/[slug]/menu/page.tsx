@@ -1,3 +1,4 @@
+import React from "react";
 import RestaurantNavBar from "../components/RestaurantNavBar";
 import Menu from "../components/Menu";
 

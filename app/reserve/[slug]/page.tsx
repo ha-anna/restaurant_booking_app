@@ -1,3 +1,4 @@
+import React from "react";
 import NavBar from "../../components/NavBar";
 import Header from "./components/Header";
 import Form from "./components/Form";
