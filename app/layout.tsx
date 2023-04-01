@@ -1,6 +1,6 @@
-import React from "react";
-import "./globals.css";
-import NavBar from "./components/NavBar";
+import React from 'react';
+import './globals.css';
+import NavBar from './components/NavBar';
 
 export default function RootLayout({
   children,
@@ -15,7 +15,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <main className="max-w-screen-2xl m-auto bg-white mb-3">
+        <main className="max-w-screen-2xl m-auto bg-white min-h-screen">
           <NavBar />
           {children}
         </main>
