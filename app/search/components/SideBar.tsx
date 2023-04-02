@@ -1,22 +1,35 @@
-import React from "react";
+import { Location, Cuisine } from '@prisma/client';
+import React from 'react';
 
-export default function SideBar() {
+export default function SideBar({
+  locations,
+  cuisines,
+}: {
+  locations: Location[];
+  cuisines: Cuisine[];
+}) {
+  console.log(locations);
   return (
     <div className="w-1/5">
       <div className="border-b pb-4">
         <h1 className="mb-2">Region</h1>
-        <p className="font-light text-reg">Toronto</p>
-        <p className="font-light text-reg">Ottawa</p>
-        <p className="font-light text-reg">Montreal</p>
-        <p className="font-light text-reg">Hamilton</p>
-        <p className="font-light text-reg">Kingston</p>
-        <p className="font-light text-reg">Niagara</p>
+        {locations.map((location) => (
+          <p
+            key={location.id}
+            className="font-light text-reg capitalize">
+            {location.name}
+          </p>
+        ))}
       </div>
       <div className="border-b pb-4 mt-3">
         <h1 className="mb-2">Cuisine</h1>
-        <p className="font-light text-reg">Mexican</p>
-        <p className="font-light text-reg">Italian</p>
-        <p className="font-light text-reg">Chinese</p>
+        {cuisines.map((cuisine) => (
+          <p
+            key={cuisine.id}
+            className="font-light text-reg capitalize">
+            {cuisine.name}
+          </p>
+        ))}
       </div>
       <div className="mt-3 pb-4">
         <h1 className="mb-2">Price</h1>

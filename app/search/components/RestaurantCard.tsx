@@ -2,12 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { RestaurantCardType } from '../../page';
 import Price from '../../components/Price';
+
 interface Props {
   restaurant: RestaurantCardType;
 }
 
 export default function RestaurantCard({ restaurant }: Props) {
-  const { id, name, main_image, cuisine, slug, location, price } = restaurant;
+  const { name, main_image, cuisine, location, price } = restaurant;
   return (
     <div className="border-b flex pb-5 items-center">
       <img
