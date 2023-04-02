@@ -6,21 +6,21 @@ export default function Price({ price }: { price: PRICE }) {
     if (price === PRICE.CHEAP) {
       return (
         <>
-          <span>$$</span>
+          <span>$</span>
           <span className="text-gray-400">$$</span>
         </>
       );
     } else if (price === PRICE.REGULAR) {
       return (
         <>
-          <span>$$$</span>
+          <span>$$</span>
           <span className="text-gray-400">$</span>
         </>
       );
     } else if (price === PRICE.EXPENSIVE) {
-      return <span>$$$$</span>;
+      return <span>$$$</span>;
     } else {
-      return <span className="text-gray-400">????</span>;
+      return <span className="text-gray-400">???</span>;
     }
   };
   return <p className="mr-3">{renderPrice()}</p>;
