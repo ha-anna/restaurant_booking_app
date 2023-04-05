@@ -64,9 +64,9 @@ const fetchCuisines = async () => {
 export default async function Search({
   searchParams,
 }: {
-  searchParams: { city: string };
+  searchParams: SearchParams;
 }) {
-  const restaurants = await fetchRestaurantsByLocation(searchParams.city);
+  const restaurants = await fetchRestaurantsByLocation(searchParams);
   const locations = await fetchLocations();
   const cuisines = await fetchCuisines();
 
