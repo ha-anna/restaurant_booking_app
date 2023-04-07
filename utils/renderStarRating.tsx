@@ -6,9 +6,9 @@ import {
   MaterialSymbolsStarOutlineRounded as StarEmpty,
 } from '../app/components/StarRating';
 
-export const renderStarRating = (reviews: Review[]) => {
-  const rating = calculateReviewAverage(reviews);
-  if (rating > 4) {
+export const renderStarRating = (reviews: Review[] | number, num: number) => {
+  const rating = calculateReviewAverage(reviews) || num;
+  if (rating > 3) {
     return (
       <span>
         <StarFull />
@@ -16,14 +16,14 @@ export const renderStarRating = (reviews: Review[]) => {
         <StarFull />
       </span>
     );
-  } else if (rating > 3) {
+  } else if (rating <= 3 && rating > 2) {
     return (
       <span>
         <StarFull />
         <StarFull />
       </span>
     );
-  } else if (rating > 1) {
+  } else if (rating <= 2 && rating > 1) {
     return (
       <span>
         <StarFull />
