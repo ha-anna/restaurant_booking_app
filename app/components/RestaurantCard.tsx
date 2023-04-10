@@ -24,7 +24,7 @@ export default function RestaurantCard({ restaurant }: Props) {
         <div className="p-3">
           <h3 className="font-bold text-2xl mb-3">{name}</h3>
           <div className="flex items-start">
-            <div className="flex mb-2">{renderStarRating(reviews)}</div>
+            <div className="flex mb-2">{renderStarRating(reviews, 0)}</div>
             <p className="ml-2 mt-1">
               {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
             </p>

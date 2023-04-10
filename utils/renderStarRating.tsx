@@ -2,38 +2,22 @@ import React from 'react';
 import { Review } from '@prisma/client';
 import { calculateReviewAverage } from './calculateReviewAverage';
 import {
-  MaterialSymbolsStarRounded as StarFull,
-  MaterialSymbolsStarOutlineRounded as StarEmpty,
+  MaterialSymbolsStarRoundedFull as StarFull,
+  MaterialSymbolsStarOutlineRoundedEmpty as StarEmpty,
+  MaterialSymbolsStarOutlineRoundedHalf as StarHalf,
 } from '../app/components/StarRating';
 
 export const renderStarRating = (reviews: Review[] | number, num: number) => {
-  const rating = calculateReviewAverage(reviews) || num;
-  if (rating > 3) {
-    return (
-      <span>
-        <StarFull />
-        <StarFull />
-        <StarFull />
-      </span>
-    );
-  } else if (rating <= 3 && rating > 2) {
-    return (
-      <span>
-        <StarFull />
-        <StarFull />
-      </span>
-    );
-  } else if (rating <= 2 && rating > 1) {
-    return (
-      <span>
-        <StarFull />
-      </span>
-    );
-  } else {
-    return (
-      <span>
-        <StarEmpty />
-      </span>
-    );
+  const rating = num || calculateReviewAverage(reviews);
+  const stars = [];
+  for (let i = 0; i < 5; i++) {
+    const difference = parseFloat((rating - i).toFixed(1));
+    if (difference >= 1) stars.push(<StarFull />);
+    else if (difference >= 0.5 && difference > 0) {
+      if (difference <= 0.2) stars.push(<StarEmpty />);
+      else if (difference > 0.2 && difference <= 0.6) stars.push(<StarHalf />);
+      else stars.push(<StarFull />);
+    } else stars.push(<StarEmpty />);
   }
+  return stars;
 };
